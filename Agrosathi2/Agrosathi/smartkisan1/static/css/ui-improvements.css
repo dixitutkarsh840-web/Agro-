@@ -1,0 +1,137 @@
+/* Shared UI refinements for Agrosathi pages.
+   Preserve each page's palette and visual identity while improving usability. */
+
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    scroll-padding-top: 5rem;
+}
+
+body {
+    min-width: 320px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+*,
+*::before,
+*::after {
+    min-width: 0;
+}
+
+img,
+svg,
+video,
+canvas {
+    max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    line-height: 1.2;
+    text-wrap: balance;
+}
+
+p,
+li {
+    overflow-wrap: break-word;
+}
+
+small,
+label,
+[class*="hint"],
+[class*="helper"],
+[class*="caption"],
+[class*="meta"],
+[class*="label"],
+[class*="kicker"],
+[class*="status"],
+[class*="badge"],
+[class*="tag"],
+[class*="data"] {
+    font-size: max(14px, 0.875em) !important;
+    line-height: 1.5;
+}
+
+button,
+select,
+input,
+textarea,
+[role="button"],
+summary {
+    max-width: 100%;
+}
+
+button,
+select,
+[role="button"],
+summary {
+    min-height: 44px;
+}
+
+input,
+select,
+textarea {
+    font-size: max(16px, 1em);
+}
+
+textarea {
+    resize: vertical;
+}
+
+table {
+    max-width: 100%;
+}
+
+pre,
+code {
+    overflow-wrap: anywhere;
+}
+
+:focus-visible {
+    outline: 3px solid #159447 !important;
+    outline-offset: 3px;
+}
+
+@media (max-width: 760px) {
+    body {
+        overflow-x: clip;
+    }
+
+    :where(.page, .container, .wrapper, .dashboard-main, .ai-main, .main-content, .content-wrapper) {
+        width: calc(100% - 28px);
+        max-width: 100%;
+        margin-inline: auto;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        overscroll-behavior-inline: contain;
+    }
+
+    input,
+    select,
+    textarea,
+    button {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 420px) {
+    :where(.page, .container, .wrapper, .dashboard-main, .ai-main, .main-content, .content-wrapper) {
+        width: calc(100% - 24px);
+    }
+
+    :where(button, [role="button"]) {
+        white-space: normal;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto !important;
+    }
+}
